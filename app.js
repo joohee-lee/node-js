@@ -1,6 +1,10 @@
-//  express study --- 1 
-// *** 모듈 추출  *** //
+// node.js 기본 구조 구축 설계
+// 1. 모듈 선언
+// 2. 설정
+// 3. 미들웨어
 
+
+//1. 어플리케이션을 작성할 때(app.js )  모든 dependency되는 모듈들은 require()를 이용해야 한다.
 //file system
 var fs = require('fs');
 
@@ -20,7 +24,8 @@ var dust = require('dustjs-linkedin');
 dust.helper = require('dustjs-helpers');
 dust.config.whitespace = true; // 줄바꿈 유지
 dust.config.cache = false; // true : 실행할때마다 dust 다시 로딩, false : 다시 로딩 없음
-//Disable Caching- As of Dust 2.7.0, you can set dust.config.cache to false to disable the cache in development, so Dust will try to reload the template every time.
+//Disable Caching- As of Dust 2.7.0, you can set dust.config.cache to false to disable the cache in development, 
+//so Dust will try to reload the template every time.
 
 var DEBUG = true;
 var PORT_NUM = 3002;
@@ -104,6 +109,7 @@ process.argv.forEach(function(val, index) {
 
 
 
+
 var corsOptions = {
     origin: '*',
     method: ['GET', 'POST'],
@@ -111,13 +117,15 @@ var corsOptions = {
 };
 
 
-// all environments
-//
-//CoRS 설정
-app.use(cors());
+// 2.  app.set()을 이용해서 express의 세팅 (all environments)
 
 //node.js의 포트를 설정한다. 여기서는 default를 PORT_NUM ( 3002) 포트로 사용 하고, 환경변수에 PORT라는 이름으로 포트명을 지정했을 경우에는 그 포트명을 사용하도록 한다.(Linux의 경우 export PORT=80 이런식으로 환경 변수를 지정한다.)
 app.set('port', (process.env.PORT || PORT_NUM));
+
+
+//3. 미들웨어는 기본적으로 app.use(function(req, res, next){ ..... }); 의 구조를 가진 함수라고 생각하면 된다.
+//CoRS 설정
+app.use(cors());
 
 // 미들웨어를 설정
 app.use(bodyParser.urlencoded({extended: true}));
