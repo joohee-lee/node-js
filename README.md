@@ -36,7 +36,7 @@ var http = require("http");
 
 http.createServer() 의 매개변수로는 request 와 response 를 매개변수로 가지고 있는 함수를 넣어줍니다. 
 
-## Hello World 리턴하는 포트 8031 웹서버 생성 
+## Hello World 리턴하는 포트3002 웹서버 생성 
 
 ~~~
     // 1. 필요한 모듈 import 하기
@@ -55,9 +55,9 @@ http.createServer() 의 매개변수로는 request 와 response 를 매개변수
             /* Response Body 를 Hellow World 설정 */
             response.end("Hellow World\n");
 
-    }).listen(8081);
+    }).listen(3002);
 
-    console.log("Server running at http://127.0.0.1:8081");
+    console.log("Server running at http://127.0.0.1:3002");
 ~~~
 
 # REPL 터미널 
