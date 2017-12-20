@@ -1,5 +1,11 @@
 # node-js
-### Ref. https://velopert.com ( study )
+
+### Ref.
+- https://nodejs.org/ko/
+- https://github.com/nodejs/node
+- https://velopert.com ( study )
+- https://opentutorials.org/course/2136
+- http://expressjs.com/ko/
 
 
 ## node-js ?
