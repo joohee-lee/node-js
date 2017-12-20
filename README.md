@@ -88,11 +88,11 @@ http.createServer() 의 매개변수로는 request 와 response 를 매개변수
 
     $ npm install <모듈 이름>
 
-예를들어 유명한 Node.js 웹 프레임워크중 하나인 express를 설치한다면 다음 명령어를 입력하면됩니다.
+예를들어 유명한 Node.js 웹 프레임워크중 하나인 express를 설치한다면 다음 명령어를 입력
 
     $ npm install express
 
-설치하면 여러분의 js에서 이렇게 모듈을 사용 할 수 있습니다.
+모듈을 사용하려면
 
     var express = require('express');
     
