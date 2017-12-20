@@ -96,3 +96,25 @@ http.createServer() 의 매개변수로는 request 와 response 를 매개변수
 
     var express = require('express');
     
+# Callback Function  
+
+- 자바스크립트에서는, 함수(function)는 일급 객체
+즉, 함수는 Object 타입. 
+- (String, Array, Number, 등등..) function 자체가 객체이므로 변수안에 담을 수 도 있고 인수로서 다른 함수에 전달 해 줄수도있고,
+함수에서 만들어질수도있고 반환 
+
+- Callback function은, 특정 함수에 매개변수로서 전달된 함수를 지칭 그리고 그 Callback function은 그 함수를 전달받은 함수 안에서 호출
+
+
+### jQuery에서 사용된 callback function 예제
+
+// click 메소드의 인수가 변수가 아니라 함수이죠?
+// click 메소드의 인수가 바로 Callback 함수입니다.
+~~~
+   
+   $("#btn_1").click(function() {
+      alert("Btn 1 Clicked");
+    });
+~~~ 
+
+
